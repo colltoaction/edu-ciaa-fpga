@@ -12,6 +12,23 @@ CNOT no es una compuerta universal, por lo tanto debemos usar las compuertas de 
 
 En el caso de un PLB y sus ocho celdas logicas vamos a implementar una compuerta Toffoli generalizada a 8 bits. Necesitamos hacer esto para transmitir la senal de carry como control a traves de todas sus celdas. No es posible implementar un PLB con celdas CNOT independientes al depender todas del mismo FCIN.
 
+### Uso y experimento
+
+1. Prender y observar que el LED esta encendido
+1. BTN1 esta sincronizado con el LED y es lo que se va a medir
+1. BTN2 y BTN3 funcionan como almacenamiento de la senal de BTN1 medida
+    1. Apretar y soltar BTN2
+    1. Ahora el LED esta apagado al almacenarse BTN1=0
+1. Apretar BTN2; apretar BTN1; soltar BTN2; soltar BTN1
+    1. LED queda prendido al haberse almacenado la senal
+    1. BTN1 esta nuevamente sincronizado
+1. Apretar BTN1; apretar BTN2; soltar BTN1; soltar BTN2
+    1. LED queda apagado al haberse almacenado la senal
+    1. BTN1 esta nuevamente sincronizado pero al reves
+1. Apretar BTN3; apretar BTN1; soltar BTN3; soltar BTN1
+    1. El LED queda prendido
+    1. BTN2 no hace nada
+
 
 [CNOT]: https://es.wikipedia.org/wiki/Puerta_NOT_controlada
 [Computacion Reversible]: https://es.wikipedia.org/wiki/Computaci%C3%B3n_reversible

@@ -30,5 +30,36 @@ En el caso de un PLB y sus ocho celdas logicas vamos a implementar una compuerta
     1. BTN2 no hace nada
 
 
+### Puerta Fredkin
+
+La Puerta Toffoli (CCNOT) y la [Puerta Fredkin] (CCSWAP) son las unicas reversibles de tres bits. Su codigo resulta sencillo y se puede probar con Icestudio usando el archivo `FredkinGate.ice`.
+
+```v
+module fredkin_gate (
+ input u,
+ input x1,
+ input x2,
+ output v,
+ output y1,
+ output y2
+);
+ always @(x1, x2) begin
+     v = u;
+     case(u)
+         0: begin
+             y1 = x2;
+             y2 = x1;
+         end
+         1: begin
+             y1 = x1;
+             y2 = x2;
+         end
+     endcase
+ end
+endmodule
+```
+
+
 [CNOT]: https://es.wikipedia.org/wiki/Puerta_NOT_controlada
 [Computacion Reversible]: https://es.wikipedia.org/wiki/Computaci%C3%B3n_reversible
+[Puerta Fredkin]: https://en.wikipedia.org/wiki/Fredkin_gate

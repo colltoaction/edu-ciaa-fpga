@@ -17,49 +17,13 @@ La puerta NOT controlada [CNOT] es la unica reversible de dos bits. CNOT no es u
 
 La [Puerta Toffoli] (CCNOT) y la [Puerta Fredkin] (CCSWAP) son las unicas reversibles de tres bits. Su codigo resulta sencillo y se puede probar con Icestudio usando los archivos `FredkinGate.ice` y `ToffoliGate.ice`.
 
-```v
-module fredkin_gate (
- input u,
- input x1,
- input x2,
- output v,
- output y1,
- output y2
-);
- always @(x1, x2) begin
-     v = u;
-     case(u)
-         0: begin
-             y1 = x2;
-             y2 = x1;
-         end
-         1: begin
-             y1 = x1;
-             y2 = x2;
-         end
-     endcase
- end
-endmodule
+## PLB reversible
 
-module toffoli_gate (
- input u1,
- input u2,
- input in,
- output v1,
- output v2,
- output out
-);
- always @(*) begin
-     v1 = u1;
-     v2 = u2;
-     if (u1 && u2) begin
-         out = !in;
-     end else begin
-         out = in;
-     end
- end
-endmodule
-```
+Podemos aprovechar la arquitectura del PLB para implementar una compuerta generalizada a 8 bits. Si bien el PLB tiene 32 inputs, la cantidad de outputs es 8. Los 24 bits restantes funcionan como bits de control de esta unidad lógica de 1 byte de entrada y 1 byte de salida.
+
+## Board reversible
+
+Podemos configurar cada PLB para conectar su carry en vertical y sus puertos a otros PLBs adyacentes. Esta arquitectura evita conexiones distantes y aprovecha todos los PLBs, y todos sus puertos incluyendo carries, inputs y outputs.
 
 
 [CNOT]: https://es.wikipedia.org/wiki/Puerta_NOT_controlada

@@ -8,6 +8,8 @@
 
 Es de especial interes el area de [Computacion Reversible] para construir la computacion del futuro. Para construir circuitos reversibles va a ser indispensable que todas las primitivas (como los registros) sean reversibles.
 
+Este video explica todo clarísimo: https://youtu.be/FJ0DqQde3p0
+
 
 ### CNOT
 

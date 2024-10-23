@@ -10,6 +10,8 @@ Es de especial interes el area de [Computacion Reversible] para construir la com
 
 Este video explica todo clarísimo: https://youtu.be/FJ0DqQde3p0
 
+Implementaremos las compuertas de: https://digitalcommons.usf.edu/cgi/viewcontent.cgi?article=5371&context=etd
+
 
 ### CNOT
 
